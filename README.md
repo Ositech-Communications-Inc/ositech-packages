@@ -30,6 +30,8 @@ Centralizing them here means:
 | [`file_picker`](file_picker/README-PATCH.md) | Upstream 11.0.2's `android/build.gradle` skips applying its own Kotlin plugin under AGP 9, which this project can't work around any other way. |
 | [`video_thumbnail`](video_thumbnail/README-PATCH.md) | Upstream 0.5.6's `android/build.gradle` calls the removed `jcenter()` repository, which fails outright under modern Gradle. |
 | [`open_filex`](open_filex/README-VENDORED.md) | Vendored alongside `video_thumbnail` so a future fix can be applied locally without waiting on upstream; no patch needed yet. |
+| [`media_kit_libs_android_video`](media_kit_libs_android_video/README-PATCH.md) | Upstream 1.3.8 bundles the `default` libmpv flavor, which has no ProRes decoder; swapped to the `full` flavor jars (v1.1.11) so ProRes `.mov` files from the media server play. |
+| [`media_kit_libs_ios_video`](media_kit_libs_ios_video/README-PATCH.md) | Upstream 1.1.4 bundles the `video-default` libmpv xcframeworks, which have no ProRes decoder; swapped to `video-full` of the same v0.6.0 release. |
 
 Each package's own `README-PATCH.md` (or `README-VENDORED.md`) is the
 source of truth for exactly what was changed, why, and what to check
